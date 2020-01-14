@@ -32,17 +32,14 @@ class _CustomerPageState extends State<CustomerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("客户列表"),
-        ),
         body: Column(
-          children: <Widget>[
-            new SearchBar(),
-            new Expanded(
-              child: InfiniteListView(fn: getList, dom: CustomerItem()),
-            )
-          ],
+      children: <Widget>[
+        new SearchBar(),
+        new Expanded(
+          child: InfiniteListView(fn: getList, dom: CustomerItem()),
         )
+      ],
+    )
         // new SearchBar(),
         // InfiniteListView(fn: getList, dom: CustomerItem()),
         //  Column(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:store/views/customers/customers.dart';
 import 'package:store/views/goods/goods.dart';
 import 'package:store/views/orders/orders.dart';
+import 'package:store/components/drawer/index.dart';
 
 class MyAppPage extends StatefulWidget {
   @override
@@ -42,7 +43,10 @@ class _MyAppPageState extends State<MyAppPage> {
 
   Widget build(BuildContext context) {
     return new Scaffold(
-      // appBar: appBarTitle,
+      appBar: AppBar(
+        title: Text(tabData[_currentIndex]['text']),
+      ),
+      drawer: new MyDrawer(),
       body: IndexedStack(
         index: _currentIndex,
         children: _list,
