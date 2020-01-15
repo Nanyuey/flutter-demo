@@ -3,6 +3,8 @@ import 'package:store/views/customers/customers.dart';
 import 'package:store/views/goods/goods.dart';
 import 'package:store/views/orders/orders.dart';
 import 'package:store/components/drawer/index.dart';
+import 'package:store/routes/application.dart';
+import 'package:store/routes/routes.dart';
 
 class MyAppPage extends StatefulWidget {
   @override
@@ -41,11 +43,27 @@ class _MyAppPageState extends State<MyAppPage> {
     });
   }
 
+  void toAddPage(index) {
+    if (index == 0) {
+      Application.router.navigateTo(context, Routes.customerAdd + "?type=0");
+    } else if (index == 1) {
+      Application.router.navigateTo(context, Routes.orderAdd + '?type=1');
+    } else {
+      Application.router.navigateTo(context, Routes.goodsAdd + '?type=2');
+    }
+  }
+
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: AppBar(
-        title: Text(tabData[_currentIndex]['text']),
-      ),
+      appBar:
+          AppBar(title: Text(tabData[_currentIndex]['text']), actions: <Widget>[
+        new IconButton(
+          icon: new Icon(Icons.add),
+          onPressed: () {
+            toAddPage(_currentIndex);
+          },
+        )
+      ]),
       drawer: new MyDrawer(),
       body: IndexedStack(
         index: _currentIndex,

@@ -6,6 +6,7 @@ import 'package:store/views/home.dart';
 import 'package:store/views/login.dart';
 import 'package:provider/provider.dart';
 import './model/user.dart';
+import 'package:store/views/register.dart';
 
 void main() {
   final userInfo = UserModel();
@@ -31,6 +32,7 @@ class _MyAppState extends State<MyApp> {
   bool _isLoading = true;
   bool _hasLogin = false;
   showWelcomePage() {
+    // return LoginPage();
     // return LoginPage();
     return MyAppPage();
     // if (_isLoading) {
