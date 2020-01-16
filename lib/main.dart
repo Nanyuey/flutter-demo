@@ -7,6 +7,7 @@ import 'package:store/views/login.dart';
 import 'package:provider/provider.dart';
 import './model/user.dart';
 import 'package:store/views/register.dart';
+import 'package:store/views/demos.dart';
 
 void main() {
   final userInfo = UserModel();
@@ -32,9 +33,10 @@ class _MyAppState extends State<MyApp> {
   bool _isLoading = true;
   bool _hasLogin = false;
   showWelcomePage() {
+    return GestureDetectorTestRoute();
     // return LoginPage();
     // return LoginPage();
-    return MyAppPage();
+    // return MyAppPage();
     // if (_isLoading) {
     //   return Container(
     //     color: Color(this.themeColor),

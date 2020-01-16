@@ -7,7 +7,10 @@ class CustomerPage extends StatefulWidget {
   _CustomerPageState createState() => new _CustomerPageState();
 }
 
-class _CustomerPageState extends State<CustomerPage> {
+class _CustomerPageState extends State<CustomerPage>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
   List customerList = [
     {'name': "##loading##"}
   ];

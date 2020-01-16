@@ -11,7 +11,9 @@ class InfiniteListView extends StatefulWidget {
 
 class _InfiniteListViewState extends State<InfiniteListView> {
   static const loadingTag = "##loading##"; //表尾标记
-  var _words = <dynamic>[loadingTag];
+  var _words = <dynamic>[
+    {'name': "##loading##"}
+  ];
   List _list = [];
   String searchValue;
   @override
@@ -20,6 +22,7 @@ class _InfiniteListViewState extends State<InfiniteListView> {
     Future.delayed(Duration(milliseconds: 200)).then((e) {
       setState(() {
         _words = widget.fn();
+        print(_words);
       });
     });
     // _retrieveData();

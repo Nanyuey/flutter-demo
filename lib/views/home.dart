@@ -5,6 +5,7 @@ import 'package:store/views/orders/orders.dart';
 import 'package:store/components/drawer/index.dart';
 import 'package:store/routes/application.dart';
 import 'package:store/routes/routes.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyAppPage extends StatefulWidget {
   @override
@@ -54,6 +55,9 @@ class _MyAppPageState extends State<MyAppPage> {
   }
 
   Widget build(BuildContext context) {
+    ScreenUtil.instance =
+        ScreenUtil(width: 750, height: 1334, allowFontScaling: false)
+          ..init(context);
     return new Scaffold(
       appBar:
           AppBar(title: Text(tabData[_currentIndex]['text']), actions: <Widget>[
